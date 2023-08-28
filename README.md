@@ -1,3 +1,17 @@
-- Make sure Astro is in SSR mode (`output: "server"` set in `astro.config.mjs`)
-- Put your `config.yml` file in `public/admin/config.yml` (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
-- This integration automatically adds the `/admin`, `/oauth` and `/oauth/callback` routes to enable Decap CMS admin dashboard and a custom OAuth authentication backend using GitHub as provider.
+<div align="center">
+	<h1 align="center">astro-decap-cms-github</h1>
+	<p align="center">Astro integration for the <a href="https://decapcms.org" target="_blank">Decap CMS</a> with custom OAuth backend using GitHub</p><br/>
+</div>
+
+<p align="center">
+  <a href="https://npmjs.com/package/astro-decap-cms-github">
+    <img src="https://img.shields.io/npm/v/astro-decap-cms-github" alt="Astro Decap CMS GitHub" />
+  </a>
+  <a href="https://npmjs.com/package/astro-decap-cms-github">
+    <img src="https://img.shields.io/npm/dt/astro-decap-cms-github" alt="npm download count">
+  </a>
+</p>
+
+### For the library docs, see [lib/README.md](lib/README.md)
+
+This astro app serves as a demo implementing the integration `astro-decap-cms-github`.
