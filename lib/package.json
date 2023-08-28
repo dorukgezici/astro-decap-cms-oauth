@@ -1,6 +1,6 @@
 {
   "name": "astro-decap-cms-oauth",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/dorukgezici/astro-decap-cms-oauth.git"
   },
   "bugs": "https://github.com/dorukgezici/astro-decap-cms-oauth/issues",
-  "homepage": "https://github.com/dorukgezici/astro-decap-cms-oauth#readme",
+  "homepage": "https://github.com/dorukgezici/astro-decap-cms-oauth/blob/main/lib/README.md",
   "type": "module",
   "files": [
     "dist",
