@@ -1,5 +1,5 @@
 <div align="center">
-	<h1 align="center">astro-decap-cms-oauth</h1>
+	<h1 align="center">astro-decap-cms-oauth-demo</h1>
 	<p align="center">Astro integration for the <a href="https://decapcms.org" target="_blank">Decap CMS</a> with custom OAuth backend</p>
   <br/>
 </div>

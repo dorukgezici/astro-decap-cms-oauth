@@ -33,11 +33,11 @@ Add the integration and set output to `server` in your `astro.config.mjs` file:
 
 ```js
 import { defineConfig } from "astro/config";
-import { decapCmsGithub } from "astro-decap-cms-oauth";
+import { decapCmsOauth } from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
-    integrations: [decapCmsGithub()],
+    integrations: [decapCmsOauth()],
     output: "server",
 });
 ```

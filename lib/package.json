@@ -1,6 +1,6 @@
 {
   "name": "astro-decap-cms-oauth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
