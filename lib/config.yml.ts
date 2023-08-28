@@ -1,3 +1,5 @@
+import type { APIRoute } from "astro";
+
 export const configYML = `
   backend:
     name: github
@@ -25,3 +27,9 @@ export const configYML = `
         - { label: "Title", name: "title", widget: "string" }
         - { label: "Body", name: "body", widget: "markdown" }
 `;
+
+export const get: APIRoute = async ({ params, request }) => {
+  return {
+    body: configYML,
+  };
+};
