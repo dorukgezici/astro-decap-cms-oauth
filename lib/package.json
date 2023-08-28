@@ -1,0 +1,52 @@
+{
+  "name": "astro-decap-cms-github",
+  "version": "0.1.6",
+  "description": "Add Decap CMS’s admin dashboard and GitHub OAuth backend to your Astro project",
+  "keywords": [
+    "astro-integration",
+    "astro-component",
+    "cms",
+    "decap-cms",
+    "oauth"
+  ],
+  "author": "Doruk Gezici",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorukgezici/astro-decap-cms-github.git"
+  },
+  "bugs": "https://github.com/dorukgezici/astro-decap-cms-github/issues",
+  "homepage": "https://github.com/dorukgezici/astro-decap-cms-github#readme",
+  "type": "module",
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "main": "./dist/astro-decap-cms-github.umd.cjs",
+  "module": "./dist/astro-decap-cms-github.js",
+  "types": "./dist/astro-decap-cms-github.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/astro-decap-cms-github.js",
+      "require": "./dist/astro-decap-cms-github.umd.cjs"
+    },
+    "./oauth/callback.ts": "./oauth/callback.ts",
+    "./oauth/index.ts": "./oauth/index.ts",
+    "./admin.astro": "./admin.astro"
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "tiny-json-http": "^7.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "@types/tiny-json-http": "^7.3.1",
+    "astro": "^2.10.14",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.2"
+  }
+}
