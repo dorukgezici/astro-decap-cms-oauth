@@ -1,3 +1,4 @@
+import vercel from "@astrojs/vercel/serverless";
 import decapCMS from "astro-decap-cms-github";
 import { defineConfig } from "astro/config";
 
@@ -6,4 +7,5 @@ export default defineConfig({
   site: "https://astro-decap-cms-github.vercel.app",
   integrations: [decapCMS()],
   output: "server",
+  adapter: vercel(),
 });
