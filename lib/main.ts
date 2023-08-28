@@ -12,22 +12,22 @@ export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegratio
       "astro:config:setup": async ({ injectRoute }) => {
         injectRoute({
           pattern: "/admin",
-          entryPoint: "./lib/admin.astro",
+          entryPoint: "astro-decap-cms-github/lib/admin.astro",
         });
 
         injectRoute({
           pattern: "/admin/config.yml",
-          entryPoint: "./lib/config.yml.ts",
+          entryPoint: "astro-decap-cms-github/lib/config.yml.ts",
         });
 
         injectRoute({
           pattern: "/oauth",
-          entryPoint: "./lib/oauth/index.ts",
+          entryPoint: "astro-decap-cms-github/lib/oauth/index.ts",
         });
 
         injectRoute({
           pattern: "/oauth/callback",
-          entryPoint: "./lib/oauth/callback.ts",
+          entryPoint: "astro-decap-cms-github/lib/oauth/callback.ts",
         });
       },
     },
