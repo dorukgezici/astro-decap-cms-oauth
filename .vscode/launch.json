@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "./node_modules/.bin/astro dev --host 0.0.0.0",
+      "command": "./node_modules/.bin/astro dev",
       "name": "dev",
       "request": "launch",
       "type": "node-terminal",

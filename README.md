@@ -1,0 +1,3 @@
+- Make sure Astro is in SSR mode (`output: "server"` set in `astro.config.mjs`)
+- Put your `config.yml` file in `public/admin/config.yml` (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
+- This integration automatically adds the `/admin`, `/oauth` and `/oauth/callback` routes to enable Decap CMS admin dashboard and a custom OAuth authentication backend using GitHub as provider.

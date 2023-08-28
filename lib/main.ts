@@ -1,9 +1,6 @@
 import type { AstroIntegration } from "astro";
 
-export type DecapCMSOptions = {
-  githubClientId?: string;
-  githubClientSecret?: string;
-};
+export type DecapCMSOptions = {};
 
 export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegration {
   return {
@@ -13,11 +10,6 @@ export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegratio
         injectRoute({
           pattern: "/admin",
           entryPoint: "astro-decap-cms-github/lib/admin.astro",
-        });
-
-        injectRoute({
-          pattern: "/admin/config.yml",
-          entryPoint: "astro-decap-cms-github/lib/config.yml.ts",
         });
 
         injectRoute({
