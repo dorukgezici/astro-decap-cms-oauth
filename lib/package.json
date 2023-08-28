@@ -1,7 +1,7 @@
 {
-  "name": "astro-decap-cms-github",
-  "version": "0.1.9",
-  "description": "Add Decap CMS’s admin dashboard and GitHub OAuth backend to your Astro project",
+  "name": "astro-decap-cms-oauth",
+  "version": "0.2.0",
+  "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
     "astro-component",
@@ -13,23 +13,23 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dorukgezici/astro-decap-cms-github.git"
+    "url": "git+https://github.com/dorukgezici/astro-decap-cms-oauth.git"
   },
-  "bugs": "https://github.com/dorukgezici/astro-decap-cms-github/issues",
-  "homepage": "https://github.com/dorukgezici/astro-decap-cms-github#readme",
+  "bugs": "https://github.com/dorukgezici/astro-decap-cms-oauth/issues",
+  "homepage": "https://github.com/dorukgezici/astro-decap-cms-oauth#readme",
   "type": "module",
   "files": [
     "dist",
     "src",
     "README.md"
   ],
-  "main": "./dist/astro-decap-cms-github.umd.cjs",
-  "module": "./dist/astro-decap-cms-github.js",
-  "types": "./dist/astro-decap-cms-github.d.ts",
+  "main": "./dist/astro-decap-cms-oauth.umd.cjs",
+  "module": "./dist/astro-decap-cms-oauth.js",
+  "types": "./dist/astro-decap-cms-oauth.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/astro-decap-cms-github.js",
-      "require": "./dist/astro-decap-cms-github.umd.cjs"
+      "import": "./dist/astro-decap-cms-oauth.js",
+      "require": "./dist/astro-decap-cms-oauth.umd.cjs"
     },
     "./src/oauth/callback.ts": "./src/oauth/callback.ts",
     "./src/oauth/index.ts": "./src/oauth/index.ts",

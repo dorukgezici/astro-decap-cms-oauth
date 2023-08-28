@@ -6,8 +6,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, "src/main.ts"),
-      name: "AstroDecapCMSGitHub",
-      fileName: "astro-decap-cms-github",
+      name: "AstroDecapCMSOAuth",
+      fileName: "astro-decap-cms-oauth",
     },
   },
   plugins: [dts({ rollupTypes: true })],
