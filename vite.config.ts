@@ -1,16 +1,16 @@
 import path from "path";
 import { defineConfig } from "vite";
-
-const name = "astro-decap-cms-github";
+import dts from "vite-plugin-dts";
 
 export default defineConfig(() => {
   return {
     build: {
       lib: {
-        entry: path.resolve(__dirname, "lib", "main.ts"),
-        name: name,
-        fileName: (format) => (format === "es" ? `${name}.mjs` : `${name}.js`),
+        entry: path.resolve(__dirname, "lib/main.ts"),
+        name: "AstroDecapCMSGitHub",
+        fileName: "astro-decap-cms-github",
       },
     },
+    plugins: [dts({ rollupTypes: true })],
   };
 });

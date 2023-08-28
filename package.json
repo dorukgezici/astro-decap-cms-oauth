@@ -1,6 +1,6 @@
 {
   "name": "astro-decap-cms-github",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add Decap CMS’s admin dashboard and GitHub OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
@@ -17,16 +17,18 @@
   },
   "bugs": "https://github.com/dorukgezici/astro-decap-cms-github/issues",
   "homepage": "https://github.com/dorukgezici/astro-decap-cms-github#readme",
-  "main": "./dist/astro-decap-cms-github.js",
-  "module": "./dist/astro-decap-cms-github.mjs",
+  "type": "module",
   "files": [
     "dist",
     "lib"
   ],
+  "main": "./dist/astro-decap-cms-github.umd.cjs",
+  "module": "./dist/astro-decap-cms-github.js",
+  "types": "./dist/astro-decap-cms-github.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/astro-decap-cms-github.mjs",
-      "require": "./dist/astro-decap-cms-github.js"
+      "import": "./dist/astro-decap-cms-github.js",
+      "require": "./dist/astro-decap-cms-github.umd.cjs"
     }
   },
   "scripts": {
@@ -41,6 +43,7 @@
     "@types/tiny-json-http": "^7.3.1",
     "astro": "^2.10.14",
     "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.2"
   }
 }
