@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.0.5
     version: 3.0.5
   astro-decap-cms-oauth:
-    specifier: file:../
-    version: file:..(astro@3.0.5)
+    specifier: ^0.2.3
+    version: link:..
 
 packages:
 
@@ -3381,10 +3381,6 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /tiny-json-http@7.5.1:
-    resolution: {integrity: sha512-lB7qkBGpL3HR/8gidBu3MMfgfnDj2mlvK/eYXgSbO06gKphemLKGp/TgRTy/BKVD7nCbgIeCm41lMNayXO1f2w==}
-    dev: false
-
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -3720,15 +3716,4 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-    dev: false
-
-  file:..(astro@3.0.5):
-    resolution: {directory: .., type: directory}
-    id: file:..
-    name: astro-decap-cms-oauth
-    peerDependencies:
-      astro: ^2.0.0 || ^3.0.0
-    dependencies:
-      astro: 3.0.5
-      tiny-json-http: 7.5.1
     dev: false
