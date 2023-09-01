@@ -2,7 +2,7 @@
   "configurations": [
     {
       "envFile": "${workspaceFolder}/demo/.env",
-      "command": "pnpm dev:demo",
+      "command": "pnpm -F astro-decap-cms-oauth-demo dev",
       "name": "dev",
       "request": "launch",
       "type": "node-terminal"

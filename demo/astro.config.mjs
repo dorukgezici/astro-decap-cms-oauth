@@ -7,5 +7,5 @@ export default defineConfig({
   site: "https://astro-decap-cms-oauth.vercel.app",
   integrations: [decapCmsOauth()],
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({ functionPerRoute: false }),
 });
