@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "prepare": "pnpm -C ../ run build"
+    "prepare": "pnpm -C ../ i && pnpm -C ../ run build"
   },
   "dependencies": {
     "@astrojs/node": "^6.0.0",
