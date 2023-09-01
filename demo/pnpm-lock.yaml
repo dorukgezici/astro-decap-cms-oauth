@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.0.5
     version: 3.0.6
   astro-decap-cms-oauth:
-    specifier: ^0.2.3
-    version: 0.2.3(astro@3.0.6)
+    specifier: file:../
+    version: file:..(astro@3.0.6)(typescript@5.2.2)
 
 packages:
 
@@ -997,15 +997,6 @@ packages:
 
   /array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
-    dev: false
-
-  /astro-decap-cms-oauth@0.2.3(astro@3.0.6):
-    resolution: {integrity: sha512-6yct+XCjQR2GmMV0wDvpAvBNaoKmWPZuuJGYXczMf0uGUl7WTcXl8MosoGkDulYPYSSXkxpTTWaAhtLz3I11hQ==}
-    peerDependencies:
-      astro: ^2.0.0 || ^3.0.0
-    dependencies:
-      astro: 3.0.6
-      tiny-json-http: 7.5.1
     dev: false
 
   /astro@3.0.6:
@@ -3450,6 +3441,12 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: false
+
   /undici@5.23.0:
     resolution: {integrity: sha512-1D7w+fvRsqlQ9GscLBwcAJinqcZGHUKjbOmXdlE/v8BvEGXjeWAax+341q44EuTcHXXnfyKNbKRq4Lg7OzhMmg==}
     engines: {node: '>=14.0'}
@@ -3729,4 +3726,17 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
+    dev: false
+
+  file:..(astro@3.0.6)(typescript@5.2.2):
+    resolution: {directory: .., type: directory}
+    id: file:..
+    name: astro-decap-cms-oauth
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0
+      typescript: 4.0.0 || ^5.0.0
+    dependencies:
+      astro: 3.0.6
+      tiny-json-http: 7.5.1
+      typescript: 5.2.2
     dev: false
