@@ -39,7 +39,9 @@
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "dev:demo": "pnpm -F astro-decap-cms-oauth-demo dev",
+    "build:demo": "pnpm run build && pnpm -F astro-decap-cms-oauth-demo build"
   },
   "dependencies": {
     "tiny-json-http": "^7.5.1"

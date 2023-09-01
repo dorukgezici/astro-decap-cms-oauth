@@ -1,9 +1,8 @@
 {
   "configurations": [
     {
-      "cwd": "${workspaceFolder}/demo",
       "envFile": "${workspaceFolder}/demo/.env",
-      "command": "./node_modules/.bin/astro dev",
+      "command": "pnpm dev:demo",
       "name": "dev",
       "request": "launch",
       "type": "node-terminal"

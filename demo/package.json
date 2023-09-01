@@ -8,13 +8,12 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "prepare": "pnpm -C ../ i && pnpm -C ../ run build"
+    "build": "astro build"
   },
   "dependencies": {
     "@astrojs/node": "^6.0.0",
     "@astrojs/vercel": "^4.0.2",
     "astro": "^3.0.5",
-    "astro-decap-cms-oauth": "file:../"
+    "astro-decap-cms-oauth": "workspace:*"
   }
 }
