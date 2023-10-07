@@ -1,6 +1,6 @@
 {
   "name": "astro-decap-cms-oauth",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
@@ -45,12 +45,12 @@
     "tiny-json-http": "^7.5.1"
   },
   "devDependencies": {
-    "@types/node": "^20.5.7",
-    "@types/tiny-json-http": "^7.3.1",
-    "astro": "^3.0.6",
+    "@types/node": "^20.8.3",
+    "@types/tiny-json-http": "^7.3.2",
+    "astro": "^3.2.3",
     "typescript": "^5.2.2",
-    "vite-plugin-dts": "^3.5.3",
-    "vite": "^4.4.9"
+    "vite": "^4.4.11",
+    "vite-plugin-dts": "^3.6.0"
   },
   "peerDependencies": {
     "astro": "^2.0.0 || ^3.0.0"
