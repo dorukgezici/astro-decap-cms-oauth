@@ -1,19 +1,23 @@
 import type { AstroIntegration } from "astro";
 
-export type DecapCMSOptions = {
+export interface DecapCMSOptions {
   adminRoute?: string;
   oauthDisabled?: boolean;
   oauthLoginRoute?: string;
   oauthCallbackRoute?: string;
+}
+
+const defaultOptions: DecapCMSOptions = {
+  adminRoute: "/admin",
+  oauthDisabled: false,
+  oauthLoginRoute: "/oauth",
+  oauthCallbackRoute: "/oauth/callback",
 };
 
-export default function decapCMS({
-  adminRoute = "/admin",
-  oauthDisabled = false,
-  oauthLoginRoute = "/oauth",
-  oauthCallbackRoute = "/oauth/callback",
-}: DecapCMSOptions): AstroIntegration {
-  if (!adminRoute.startsWith("/") || !oauthLoginRoute.startsWith("/") || !oauthCallbackRoute.startsWith("/")) {
+export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
+  const { adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = { ...defaultOptions, ...options };
+
+  if (!adminRoute?.startsWith("/") || !oauthLoginRoute?.startsWith("/") || !oauthCallbackRoute?.startsWith("/")) {
     throw new Error('`adminRoute`, `oauthLoginRoute` and `oauthCallbackRoute` options must start with "/"');
   }
 
