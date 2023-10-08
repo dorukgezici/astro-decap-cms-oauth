@@ -73,8 +73,33 @@ OAUTH_GITHUB_CLIENT_ID=
 OAUTH_GITHUB_CLIENT_SECRET=
 ```
 
-## Configuration
+## Configuration Options
 
-While being fully functional, this library doesn't provide any configuration options yet except providing your own `config.yml` file in `public/admin` for Decap CMS.
+```js
+export interface DecapCMSOptions {
+  adminRoute?: string;
+  oauthDisabled?: boolean;
+  oauthLoginRoute?: string;
+  oauthCallbackRoute?: string;
+}
 
-I plan to add some options for the integration in the future, contributions are welcome as well!
+const defaultOptions: DecapCMSOptions = {
+  adminRoute: "/admin",
+  oauthDisabled: false,
+  oauthLoginRoute: "/oauth",
+  oauthCallbackRoute: "/oauth/callback",
+};
+```
+
+To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
+
+```js
+import { defineConfig } from "astro/config";
+import { decapCmsOauth } from "astro-decap-cms-oauth";
+
+export default defineConfig({
+    ...,
+    integrations: [decapCmsOauth({ oauthDisabled: true })],
+    output: "server",
+});
+```
