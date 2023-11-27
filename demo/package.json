@@ -11,9 +11,9 @@
     "build": "pnpm -w build && astro build"
   },
   "dependencies": {
-    "@astrojs/node": "^6.0.3",
-    "@astrojs/vercel": "^5.0.2",
-    "astro": "^3.2.3",
+    "@astrojs/node": "^6.0.4",
+    "@astrojs/vercel": "^5.2.0",
+    "astro": "^3.6.1",
     "astro-decap-cms-oauth": "workspace:*"
   }
 }
