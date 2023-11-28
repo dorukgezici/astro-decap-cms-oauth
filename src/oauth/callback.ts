@@ -1,5 +1,4 @@
 import type { APIRoute } from "astro";
-import tiny from "tiny-json-http";
 import { clientId, clientSecret, tokenUrl } from "./_config";
 
 export const GET: APIRoute = async ({ url, redirect }) => {
@@ -12,19 +11,26 @@ export const GET: APIRoute = async ({ url, redirect }) => {
   let script;
 
   try {
-    const { body } = await tiny.post({
-      url: tokenUrl,
-      data,
-      headers: { Accept: "application/json" },
+    const response = await fetch(tokenUrl, {
+      method: 'POST',
+      headers: { 
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const body = await response.json();
 
     const content = {
       token: body.access_token,
       provider: "github",
     };
 
-    // This is what talks to the DecapCMS page.
-    // Using window.postMessage we give it the token details in a format it's expecting
     script = `
       <script>
         const receiveMessage = (message) => {
@@ -45,7 +51,6 @@ export const GET: APIRoute = async ({ url, redirect }) => {
       headers: { "Content-Type": "text/html" },
     });
   } catch (err) {
-    // If we hit an error we'll handle that here
     console.log(err);
     return redirect("/?error=😡");
   }

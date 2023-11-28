@@ -7,17 +7,10 @@ settings:
 importers:
 
   .:
-    dependencies:
-      tiny-json-http:
-        specifier: ^7.5.1
-        version: 7.5.1
     devDependencies:
       '@types/node':
         specifier: ^20.10.0
         version: 20.10.0
-      '@types/tiny-json-http':
-        specifier: ^7.3.4
-        version: 7.3.4
       astro:
         specifier: ^3.6.1
         version: 3.6.1(@types/node@20.10.0)(typescript@5.3.2)
@@ -1106,10 +1099,6 @@ packages:
   /@types/parse5@6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
 
-  /@types/tiny-json-http@7.3.4:
-    resolution: {integrity: sha512-dwWlkcm5JUTxeOs6AeG7seoveWCJNKkZyOFk09INMI4ELC3nSXD93BS/KBkD1ukC+bjs6nstr6NTOc2D3P7KnQ==}
-    dev: true
-
   /@types/unist@2.0.10:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}
 
@@ -1706,6 +1695,7 @@ packages:
   /detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
     engines: {node: '>=8'}
+    requiresBuild: true
 
   /deterministic-object-hash@1.3.1:
     resolution: {integrity: sha512-kQDIieBUreEgY+akq0N7o4FzZCr27dPG1xr3wq267vPwDlSXQ3UMcBXHqTGUBaM/5WDS1jwTYjxRhUzHeuiAvw==}
@@ -3075,6 +3065,7 @@ packages:
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
+    requiresBuild: true
     dependencies:
       wrappy: 1.0.2
 
@@ -3800,10 +3791,6 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /tiny-json-http@7.5.1:
-    resolution: {integrity: sha512-lB7qkBGpL3HR/8gidBu3MMfgfnDj2mlvK/eYXgSbO06gKphemLKGp/TgRTy/BKVD7nCbgIeCm41lMNayXO1f2w==}
-    dev: false
-
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -4217,6 +4204,7 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    requiresBuild: true
 
   /yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
