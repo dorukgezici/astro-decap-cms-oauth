@@ -29,7 +29,7 @@ npx astro add astro-decap-cms-oauth
 npm install astro-decap-cms-oauth
 ```
 
-Add the integration and set output to `server` in your `astro.config.mjs` file:
+Add the integration and set output to `server` or `hybrid` in your `astro.config.mjs` file:
 
 ```js
 import { defineConfig } from "astro/config";
