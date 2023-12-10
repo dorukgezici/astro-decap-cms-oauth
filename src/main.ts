@@ -28,20 +28,20 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
         // mount DecapCMS admin dashboard
         injectRoute({
           pattern: adminRoute,
-          entryPoint: "astro-decap-cms-oauth/src/admin.astro",
+          entrypoint: "astro-decap-cms-oauth/src/admin.astro",
         });
 
         if (!oauthDisabled) {
           // OAuth backend - sign in route
           injectRoute({
             pattern: oauthLoginRoute,
-            entryPoint: "astro-decap-cms-oauth/src/oauth/index.ts",
+            entrypoint: "astro-decap-cms-oauth/src/oauth/index.ts",
           });
 
           // OAuth backend - callback route
           injectRoute({
             pattern: oauthCallbackRoute,
-            entryPoint: "astro-decap-cms-oauth/src/oauth/callback.ts",
+            entrypoint: "astro-decap-cms-oauth/src/oauth/callback.ts",
           });
         }
       },
