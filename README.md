@@ -33,7 +33,7 @@ Add the integration and set output to `server` or `hybrid` in your `astro.config
 
 ```js
 import { defineConfig } from "astro/config";
-import { decapCmsOauth } from "astro-decap-cms-oauth";
+import decapCmsOauth from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
@@ -95,7 +95,7 @@ To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.confi
 
 ```js
 import { defineConfig } from "astro/config";
-import { decapCmsOauth } from "astro-decap-cms-oauth";
+import decapCmsOauth from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
