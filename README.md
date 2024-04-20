@@ -77,6 +77,7 @@ OAUTH_GITHUB_CLIENT_SECRET=
 
 ```js
 export interface DecapCMSOptions {
+  adminDisabled?: boolean;
   adminRoute?: string;
   oauthDisabled?: boolean;
   oauthLoginRoute?: string;
@@ -84,6 +85,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
   oauthLoginRoute: "/oauth",
@@ -91,6 +93,7 @@ const defaultOptions: DecapCMSOptions = {
 };
 ```
 
+To disable injecting Decap CMS admin route, set `adminDisabled` to `true` in `astro.config.mjs`.
 To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
 
 ```js
@@ -99,7 +102,7 @@ import decapCmsOauth from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
-    integrations: [decapCmsOauth({ oauthDisabled: true })],
+    integrations: [decapCmsOauth({ adminDisabled: true, oauthDisabled: true })],
     output: "server",
 });
 ```

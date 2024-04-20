@@ -1,6 +1,7 @@
 import type { AstroIntegration } from "astro";
 
 export interface DecapCMSOptions {
+  adminDisabled?: boolean;
   adminRoute?: string;
   oauthDisabled?: boolean;
   oauthLoginRoute?: string;
@@ -8,6 +9,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
   oauthLoginRoute: "/oauth",
@@ -15,7 +17,10 @@ const defaultOptions: DecapCMSOptions = {
 };
 
 export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
-  const { adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = { ...defaultOptions, ...options };
+  const { adminDisabled, adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = {
+    ...defaultOptions,
+    ...options,
+  };
 
   if (!adminRoute?.startsWith("/") || !oauthLoginRoute?.startsWith("/") || !oauthCallbackRoute?.startsWith("/")) {
     throw new Error('`adminRoute`, `oauthLoginRoute` and `oauthCallbackRoute` options must start with "/"');
@@ -25,20 +30,22 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
     name: "astro-decap-cms-oauth",
     hooks: {
       "astro:config:setup": async ({ injectRoute }) => {
-        // mount DecapCMS admin dashboard
-        injectRoute({
-          pattern: adminRoute,
-          entrypoint: "astro-decap-cms-oauth/src/admin.astro",
-        });
+        if (!adminDisabled) {
+          // mount DecapCMS admin route
+          injectRoute({
+            pattern: adminRoute,
+            entrypoint: "astro-decap-cms-oauth/src/admin.astro",
+          });
+        }
 
         if (!oauthDisabled) {
-          // OAuth backend - sign in route
+          // mount OAuth backend - sign in route
           injectRoute({
             pattern: oauthLoginRoute,
             entrypoint: "astro-decap-cms-oauth/src/oauth/index.ts",
           });
 
-          // OAuth backend - callback route
+          // mount OAuth backend - callback route
           injectRoute({
             pattern: oauthCallbackRoute,
             entrypoint: "astro-decap-cms-oauth/src/oauth/callback.ts",
