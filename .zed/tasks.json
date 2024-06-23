@@ -1,0 +1,17 @@
+[
+  {
+    "label": "build",
+    "command": "pnpm run build",
+    "reveal": "always"
+  },
+  {
+    "label": "dev",
+    "command": "pnpm run dev",
+    "reveal": "always"
+  },
+  {
+    "label": "demo:dev",
+    "command": "pnpm -F astro-decap-cms-oauth-demo dev",
+    "reveal": "always"
+  }
+]
