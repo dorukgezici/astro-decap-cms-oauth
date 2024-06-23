@@ -1,14 +1,8 @@
 {
   "name": "astro-decap-cms-oauth",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
-  "keywords": [
-    "astro-integration",
-    "astro-component",
-    "cms",
-    "decap-cms",
-    "oauth"
-  ],
+  "keywords": ["astro-integration", "astro-component", "cms", "decap-cms", "oauth"],
   "author": "Doruk Gezici",
   "license": "MIT",
   "repository": {
@@ -18,11 +12,7 @@
   "bugs": "https://github.com/dorukgezici/astro-decap-cms-oauth/issues",
   "homepage": "https://github.com/dorukgezici/astro-decap-cms-oauth",
   "type": "module",
-  "files": [
-    "dist",
-    "src",
-    "README.md"
-  ],
+  "files": ["dist", "src", "README.md"],
   "main": "./dist/astro-decap-cms-oauth.umd.cjs",
   "module": "./dist/astro-decap-cms-oauth.js",
   "types": "./dist/astro-decap-cms-oauth.d.ts",
@@ -42,11 +32,11 @@
     "prepublishOnly": "pnpm run build"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
-    "astro": "^4.6.3",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "vite-plugin-dts": "^3.8.3"
+    "@types/node": "^20.14.8",
+    "astro": "^4.11.0",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1"
   },
   "peerDependencies": {
     "astro": "^3.0.0 || ^4.0.0"
