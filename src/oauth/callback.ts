@@ -1,21 +1,19 @@
 import type { APIRoute } from "astro";
-import { clientId, clientSecret, tokenUrl } from "./_config";
+import { OAUTH_GITHUB_CLIENT_ID, OAUTH_GITHUB_CLIENT_SECRET } from "astro:env/server";
 
 export const GET: APIRoute = async ({ url, redirect }) => {
   const data = {
     code: url.searchParams.get("code"),
-    client_id: clientId,
-    client_secret: clientSecret,
+    client_id: OAUTH_GITHUB_CLIENT_ID,
+    client_secret: OAUTH_GITHUB_CLIENT_SECRET,
   };
 
-  let script;
-
   try {
-    const response = await fetch(tokenUrl, {
-      method: 'POST',
-      headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+    const response = await fetch("https://github.com/login/oauth/access_token", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
@@ -31,7 +29,7 @@ export const GET: APIRoute = async ({ url, redirect }) => {
       provider: "github",
     };
 
-    script = `
+    const script = `
       <script>
         const receiveMessage = (message) => {
           window.opener.postMessage(
