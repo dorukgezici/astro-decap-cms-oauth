@@ -32,17 +32,19 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
   return {
     name: "astro-decap-cms-oauth",
     hooks: {
-      "astro:config:setup": async ({ config, injectRoute, updateConfig }) => {
+      "astro:config:setup": async ({ injectRoute, updateConfig }) => {
         if (!adminDisabled) {
-          // apply env schema & version
+          // apply env schema & decapCMS version
           updateConfig({
             experimental: {
               env: {
                 schema: {
-                  ...config.experimental.env?.schema,
+                  OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret" }),
+                  OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
                   PUBLIC_DECAP_CMS_VERSION: envField.string({
                     context: "client",
                     access: "public",
+                    optional: true,
                     default: decapCMSVersion,
                   }),
                 },
