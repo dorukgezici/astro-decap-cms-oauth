@@ -1,6 +1,8 @@
 import type { AstroIntegration } from "astro";
+import { envField } from "astro/config";
 
 export interface DecapCMSOptions {
+  decapCMSVersion?: string;
   adminDisabled?: boolean;
   adminRoute?: string;
   oauthDisabled?: boolean;
@@ -9,6 +11,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  decapCMSVersion: "3.3.3",
   adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
@@ -17,7 +20,7 @@ const defaultOptions: DecapCMSOptions = {
 };
 
 export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
-  const { adminDisabled, adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = {
+  const { decapCMSVersion, adminDisabled, adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = {
     ...defaultOptions,
     ...options,
   };
@@ -29,8 +32,24 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
   return {
     name: "astro-decap-cms-oauth",
     hooks: {
-      "astro:config:setup": async ({ injectRoute }) => {
+      "astro:config:setup": async ({ config, injectRoute, updateConfig }) => {
         if (!adminDisabled) {
+          // apply env schema & version
+          updateConfig({
+            experimental: {
+              env: {
+                schema: {
+                  ...config.experimental.env?.schema,
+                  PUBLIC_DECAP_CMS_VERSION: envField.string({
+                    context: "client",
+                    access: "public",
+                    default: decapCMSVersion,
+                  }),
+                },
+              },
+            },
+          });
+
           // mount DecapCMS admin route
           injectRoute({
             pattern: adminRoute,

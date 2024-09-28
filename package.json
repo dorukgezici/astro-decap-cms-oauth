@@ -1,6 +1,6 @@
 {
   "name": "astro-decap-cms-oauth",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "keywords": [
     "astro-integration",
@@ -23,14 +23,14 @@
     "src",
     "README.md"
   ],
-  "main": "./dist/astro-decap-cms-oauth.umd.cjs",
-  "module": "./dist/astro-decap-cms-oauth.js",
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.js",
   "types": "./dist/astro-decap-cms-oauth.d.ts",
   "exports": {
     ".": {
       "types": "./dist/astro-decap-cms-oauth.d.ts",
-      "import": "./dist/astro-decap-cms-oauth.js",
-      "require": "./dist/astro-decap-cms-oauth.umd.cjs"
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs"
     },
     "./src/oauth/callback.ts": "./src/oauth/callback.ts",
     "./src/oauth/index.ts": "./src/oauth/index.ts",
@@ -38,7 +38,7 @@
   },
   "scripts": {
     "dev": "vite build --watch",
-    "build": "tsc && vite build",
+    "build": "pnpm run sync && tsc && vite build",
     "prepublishOnly": "pnpm run build",
     "sync": "pnpm astro sync"
   },

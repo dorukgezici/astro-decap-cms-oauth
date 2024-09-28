@@ -9,6 +9,7 @@ export default defineConfig({
       name: "AstroDecapCMSOAuth",
       fileName: "astro-decap-cms-oauth",
     },
+    ssr: true,
   },
   plugins: [dts({ rollupTypes: true })],
 });

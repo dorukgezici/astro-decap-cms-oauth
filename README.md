@@ -71,12 +71,15 @@ On GitHub, go to Settings > Developer Settings > OAuth apps > New OAuth app. Or 
 ```bash
 OAUTH_GITHUB_CLIENT_ID=
 OAUTH_GITHUB_CLIENT_SECRET=
+# optional
+PUBLIC_DECAP_CMS_VERSION=
 ```
 
 ## Configuration Options
 
 ```js
 export interface DecapCMSOptions {
+  decapCMSVersion?: string;
   adminDisabled?: boolean;
   adminRoute?: string;
   oauthDisabled?: boolean;
@@ -85,6 +88,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  decapCMSVersion: "3.3.3",
   adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
@@ -93,6 +97,7 @@ const defaultOptions: DecapCMSOptions = {
 };
 ```
 
+To override default version of Decap CMS used, set `PUBLIC_DECAP_CMS_VERSION` env variable (takes precedence) or `decapCMSVersion` in `astro.config.mjs`.
 To disable injecting Decap CMS admin route, set `adminDisabled` to `true` in `astro.config.mjs`.
 To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
 
@@ -102,7 +107,7 @@ import decapCmsOauth from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
-    integrations: [decapCmsOauth({ adminDisabled: true, oauthDisabled: true })],
+    integrations: [decapCmsOauth({ decapCMSVersion: "3.3.3", adminDisabled: false, oauthDisabled: true })],
     output: "server",
 });
 ```
