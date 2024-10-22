@@ -60,11 +60,35 @@ backend:
 
 3. Set up GitHub OAuth app
 
+You can either use a GitHub OAuth app, or a Github app to set up.
+
+#### GitHub OAuth
+
 On GitHub, go to Settings > Developer Settings > OAuth apps > New OAuth app. Or use this [direct link](https://github.com/settings/applications/new).
 
 **Homepage URL**: This must be the prod URL of your application.
 
 **Authorization callback URL**: This must be the prod URL of your application followed by `/oauth/callback`.
+
+### GitHub App
+
+[Register a new GitHub application](https://github.com/settings/apps/new) on GitHub ([details](https://docs.github.com/en/apps/creating-github-apps/registering-a-github-app/registering-a-github-app)).
+
+Select the scopes as `content:write`
+
+**Homepage URL**: This must be the prod URL of your application.
+
+**Authorization callback URL**: This must be the prod URL of your application followed by `/oauth/callback`.
+
+Once registered, click on the **Generate a new client secret** button. The app’s **Client ID** and **Client Secret** will be displayed.
+
+Then navigate to `https://github.com/apps/<app slug>/installations/new` to install it on the repo. You can scope the access tokens further if wanted - details on [this page](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-user-access-token-for-a-github-app#using-the-web-application-flow-to-generate-a-user-access-token)
+
+```bash
+curl -s 'https://api.github.com/repos/<owner>/<repo>' | jq .id
+```
+
+You can then use this with the `OAUTH_GITHUB_REPO_ID` environment variable.
 
 4. Set env variables
 
@@ -73,12 +97,15 @@ OAUTH_GITHUB_CLIENT_ID=
 OAUTH_GITHUB_CLIENT_SECRET=
 # optional
 PUBLIC_DECAP_CMS_VERSION=
+DECAP_CMS_SRC_URL=
+OAUTH_GITHUB_REPO_ID= # only works alongside a GitHub App, not GitHub OAuth
 ```
 
 ## Configuration Options
 
 ```js
 export interface DecapCMSOptions {
+  decapCMSSrcUrl?: string;
   decapCMSVersion?: string;
   adminDisabled?: boolean;
   adminRoute?: string;
@@ -88,6 +115,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  decapCMSSrcUrl: "",
   decapCMSVersion: "3.3.3",
   adminDisabled: false,
   adminRoute: "/admin",
@@ -98,6 +126,7 @@ const defaultOptions: DecapCMSOptions = {
 ```
 
 To override default version of Decap CMS used, set `PUBLIC_DECAP_CMS_VERSION` env variable (takes precedence) or `decapCMSVersion` in `astro.config.mjs`.
+To override the full js source, set `DECAP_CMS_SRC_URL` env variable (takes precedence) or `decapCMSSrcUrl` in `astro.config.mjs`. I set, `PUBLIC_DECAP_CMS_VERSION` is ignored.
 To disable injecting Decap CMS admin route, set `adminDisabled` to `true` in `astro.config.mjs`.
 To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
 

@@ -1,5 +1,5 @@
 ---
-import { PUBLIC_DECAP_CMS_VERSION } from "astro:env/client";
+import { PUBLIC_DECAP_CMS_VERSION, DECAP_CMS_SRC_URL } from "astro:env/client";
 ---
 
 <!doctype html>
@@ -13,6 +13,6 @@ import { PUBLIC_DECAP_CMS_VERSION } from "astro:env/client";
     </head>
     <body>
         <!-- Include the script that builds the page and powers Decap CMS -->
-        <script is:inline src={`https://unpkg.com/decap-cms@^${PUBLIC_DECAP_CMS_VERSION}/dist/decap-cms.js`}></script>
+        <script is:inline src={DECAP_CMS_SRC_URL ? DECAP_CMS_SRC_URL : `https://unpkg.com/decap-cms@^${PUBLIC_DECAP_CMS_VERSION}/dist/decap-cms.js`}></script>
     </body>
 </html>
