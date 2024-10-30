@@ -2,6 +2,7 @@ import type { AstroIntegration } from "astro";
 import { envField } from "astro/config";
 
 export interface DecapCMSOptions {
+  decapCMSSrcUrl?: string;
   decapCMSVersion?: string;
   adminDisabled?: boolean;
   adminRoute?: string;
@@ -11,6 +12,7 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  decapCMSSrcUrl: "",
   decapCMSVersion: "3.3.3",
   adminDisabled: false,
   adminRoute: "/admin",
@@ -20,7 +22,7 @@ const defaultOptions: DecapCMSOptions = {
 };
 
 export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
-  const { decapCMSVersion, adminDisabled, adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = {
+  const { decapCMSSrcUrl, decapCMSVersion, adminDisabled, adminRoute, oauthDisabled, oauthLoginRoute, oauthCallbackRoute } = {
     ...defaultOptions,
     ...options,
   };
@@ -39,8 +41,15 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
             experimental: {
               env: {
                 schema: {
+                  DECAP_CMS_SRC_URL: envField.string({
+                    context: "client",
+                    access: "public",
+                    optional: true,
+                    default: decapCMSSrcUrl,
+                  }),
                   OAUTH_GITHUB_CLIENT_ID: envField.string({ context: "server", access: "secret" }),
                   OAUTH_GITHUB_CLIENT_SECRET: envField.string({ context: "server", access: "secret" }),
+                  OAUTH_GITHUB_REPO_ID: envField.string({ context: "server", access: "secret", optional: true, default: "" }),
                   PUBLIC_DECAP_CMS_VERSION: envField.string({
                     context: "client",
                     access: "public",

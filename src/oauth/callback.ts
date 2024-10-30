@@ -1,11 +1,12 @@
 import type { APIRoute } from "astro";
-import { OAUTH_GITHUB_CLIENT_ID, OAUTH_GITHUB_CLIENT_SECRET } from "astro:env/server";
+import { OAUTH_GITHUB_CLIENT_ID, OAUTH_GITHUB_CLIENT_SECRET, OAUTH_GITHUB_REPO_ID } from "astro:env/server";
 
 export const GET: APIRoute = async ({ url, redirect }) => {
   const data = {
     code: url.searchParams.get("code"),
     client_id: OAUTH_GITHUB_CLIENT_ID,
     client_secret: OAUTH_GITHUB_CLIENT_SECRET,
+    ...(OAUTH_GITHUB_REPO_ID ? {repository_id: OAUTH_GITHUB_REPO_ID}: {}),
   };
 
   try {
