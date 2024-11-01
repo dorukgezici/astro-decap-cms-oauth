@@ -58,11 +58,11 @@ backend:
   auth_endpoint: oauth # the oauth route provided by the integration
 ```
 
-3. Set up GitHub OAuth app
+3. Set up GitHub
 
-You can either use a GitHub OAuth app, or a Github app to set up.
+You can either use a *GitHub OAuth app* or a *Github app* to get set up.
 
-#### GitHub OAuth
+### GitHub OAuth
 
 On GitHub, go to Settings > Developer Settings > OAuth apps > New OAuth app. Or use this [direct link](https://github.com/settings/applications/new).
 
@@ -88,17 +88,19 @@ Then navigate to `https://github.com/apps/<app slug>/installations/new` to insta
 curl -s 'https://api.github.com/repos/<owner>/<repo>' | jq .id
 ```
 
-You can then use this with the `OAUTH_GITHUB_REPO_ID` environment variable.
+You can then use this ID for the `OAUTH_GITHUB_REPO_ID` environment variable.
 
 4. Set env variables
 
 ```bash
+# GitHub OAuth App & GitHub App
 OAUTH_GITHUB_CLIENT_ID=
 OAUTH_GITHUB_CLIENT_SECRET=
+# GitHub App only
+OAUTH_GITHUB_REPO_ID=
 # optional
-PUBLIC_DECAP_CMS_VERSION=
-DECAP_CMS_SRC_URL=
-OAUTH_GITHUB_REPO_ID= # only works alongside a GitHub App, not GitHub OAuth
+PUBLIC_DECAP_CMS_SRC_URL=https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js
+PUBLIC_DECAP_CMS_VERSION=3.3.3
 ```
 
 ## Configuration Options
@@ -126,7 +128,7 @@ const defaultOptions: DecapCMSOptions = {
 ```
 
 To override default version of Decap CMS used, set `PUBLIC_DECAP_CMS_VERSION` env variable (takes precedence) or `decapCMSVersion` in `astro.config.mjs`.
-To override the full js source, set `DECAP_CMS_SRC_URL` env variable (takes precedence) or `decapCMSSrcUrl` in `astro.config.mjs`. I set, `PUBLIC_DECAP_CMS_VERSION` is ignored.
+To override the full js source, set `PUBLIC_DECAP_CMS_SRC_URL` env variable (takes precedence) or `decapCMSSrcUrl` in `astro.config.mjs`. If set, `PUBLIC_DECAP_CMS_VERSION` is ignored.
 To disable injecting Decap CMS admin route, set `adminDisabled` to `true` in `astro.config.mjs`.
 To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
 
