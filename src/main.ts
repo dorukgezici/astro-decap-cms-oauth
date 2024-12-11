@@ -42,7 +42,7 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
     name: "astro-decap-cms-oauth",
     hooks: {
       "astro:config:setup": async ({ injectRoute, updateConfig }) => {
-        const env: AstroConfig["experimental"]["env"] = { validateSecrets: true, schema: {} };
+        const env: AstroConfig["env"] = { validateSecrets: true, schema: {} };
 
         if (!adminDisabled) {
           env.schema!.PUBLIC_DECAP_CMS_SRC_URL = envField.string({
@@ -95,7 +95,7 @@ export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
         }
 
         // apply env schema & defaults
-        updateConfig({ experimental: { env } });
+        updateConfig({ env });
       },
     },
   };
