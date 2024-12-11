@@ -1,4 +1,4 @@
-import type { AstroIntegration, AstroConfig } from "astro";
+import type { AstroConfig, AstroIntegration } from "astro";
 import { envField } from "astro/config";
 
 export interface DecapCMSOptions {
@@ -20,7 +20,7 @@ const defaultOptions: DecapCMSOptions = {
   oauthCallbackRoute: "/oauth/callback",
 };
 
-export default function decapCMS(options: DecapCMSOptions): AstroIntegration {
+export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegration {
   const {
     decapCMSSrcUrl,
     decapCMSVersion,

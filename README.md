@@ -1,6 +1,6 @@
 <div align="center">
 	<h1 align="center">astro-decap-cms-oauth</h1>
-	<p align="center">Astro integration for the <a href="https://decapcms.org" target="_blank">Decap CMS</a> with custom OAuth backend</p>
+	<p align="center">Astro integration for <a href="https://decapcms.org" target="_blank">Decap</a>/<a href="https://github.com/sveltia/sveltia-cms" target="_blank">Sveltia</a> CMS with custom OAuth backend</p>
   <br/>
 </div>
 
@@ -13,7 +13,7 @@
   </a>
 </p>
 
-This integration automatically mounts the Decap CMS admin dashboard to `/admin` and custom OAuth authentication backend routes to `/oauth`, `/oauth/callback` using GitHub as the provider.
+This integration automatically mounts the Decap CMS (or any compatible CMS like Sveltia) admin dashboard to `/admin` and custom OAuth authentication backend routes to `/oauth`, `/oauth/callback` using GitHub as the provider.
 
 _This way, you aren't vendor-locked to `Netlify` and your app can be deployed anywhere that supports SSR._
 
@@ -29,8 +29,6 @@ npx astro add astro-decap-cms-oauth
 npm install astro-decap-cms-oauth
 ```
 
-Add the integration and set output to `server` or `hybrid` in your `astro.config.mjs` file:
-
 ```js
 import { defineConfig } from "astro/config";
 import decapCmsOauth from "astro-decap-cms-oauth";
@@ -38,15 +36,12 @@ import decapCmsOauth from "astro-decap-cms-oauth";
 export default defineConfig({
     ...,
     integrations: [decapCmsOauth()],
-    output: "server",
 });
 ```
 
 ## Usage
 
-1. Make sure Astro is in SSR mode (`output: "server"` set in `astro.config.mjs`)
-
-2. Put your `config.yml` file in `public/admin/config.yml` (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
+1. Put your `config.yml` file in `public/admin/config.yml` (see [Decap CMS Docs](https://decapcms.org/docs/add-to-your-site/#configuration) for more info)
 
 ```yml
 backend:
@@ -58,11 +53,9 @@ backend:
   auth_endpoint: oauth # the oauth route provided by the integration
 ```
 
-3. Set up GitHub
+2. Set up _GitHub OAuth app_ (recommended) or _GitHub App_
 
-You can either use a *GitHub OAuth app* or a *Github app* to get set up.
-
-### GitHub OAuth
+### GitHub OAuth App
 
 On GitHub, go to Settings > Developer Settings > OAuth apps > New OAuth app. Or use this [direct link](https://github.com/settings/applications/new).
 
@@ -128,7 +121,6 @@ const defaultOptions: DecapCMSOptions = {
 ```
 
 To override default version of Decap CMS used, set `PUBLIC_DECAP_CMS_VERSION` env variable (takes precedence) or `decapCMSVersion` in `astro.config.mjs`.
-To override the full js source, set `PUBLIC_DECAP_CMS_SRC_URL` env variable (takes precedence) or `decapCMSSrcUrl` in `astro.config.mjs`. If set, `PUBLIC_DECAP_CMS_VERSION` is ignored.
 To disable injecting Decap CMS admin route, set `adminDisabled` to `true` in `astro.config.mjs`.
 To disable injecting OAuth routes, set `oauthDisabled` to `true` in `astro.config.mjs`.
 
@@ -138,7 +130,30 @@ import decapCmsOauth from "astro-decap-cms-oauth";
 
 export default defineConfig({
     ...,
-    integrations: [decapCmsOauth({ decapCMSVersion: "3.3.3", adminDisabled: false, oauthDisabled: true })],
-    output: "server",
+    integrations: [
+      decapCmsOauth({
+        decapCMSVersion: "3.3.3",
+        adminDisabled: false,
+        oauthDisabled: true,
+      }),
+    ],
+});
+```
+
+### Sveltia CMS
+
+To use Sveltia or any other Decap CMS compatible dashboard, set `PUBLIC_DECAP_CMS_SRC_URL` env variable (takes precedence) or `decapCMSSrcUrl` in `astro.config.mjs`. If set, `PUBLIC_DECAP_CMS_VERSION` / `decapCMSVersion` settings are ignored.
+
+```js
+import { defineConfig } from "astro/config";
+import decapCmsOauth from "astro-decap-cms-oauth";
+
+export default defineConfig({
+    ...,
+    integrations: [
+      decapCmsOauth({
+        decapCMSSrcUrl: "https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js",
+      }),
+    ],
 });
 ```
