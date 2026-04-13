@@ -34,7 +34,8 @@
     },
     "./src/oauth/callback.ts": "./src/oauth/callback.ts",
     "./src/oauth/index.ts": "./src/oauth/index.ts",
-    "./src/admin.astro": "./src/admin.astro"
+    "./src/admin.astro": "./src/admin.astro",
+    "./src/config.ts": "./src/config.ts"
   },
   "scripts": {
     "dev": "vite build --watch",
@@ -43,6 +44,7 @@
     "sync": "pnpm astro sync"
   },
   "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.10.2",
     "astro": "^5.0.5",
     "typescript": "^5.7.2",
@@ -51,5 +53,8 @@
   },
   "peerDependencies": {
     "astro": "^5.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1"
   }
 }

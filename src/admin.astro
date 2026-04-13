@@ -8,7 +8,7 @@ import { PUBLIC_DECAP_CMS_VERSION, PUBLIC_DECAP_CMS_SRC_URL } from "astro:env/cl
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="noindex" />
-        <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+        <link href={`${Astro.url.pathname.replace(/\/$/, "")}/config.yml`} type="text/yaml" rel="cms-config-url" />
         <title>Content Manager</title>
     </head>
     <body>
