@@ -1,7 +1,7 @@
 {
   "name": "astro-decap-cms-oauth-demo",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Add Decap CMS’s admin dashboard and a custom OAuth backend to your Astro project",
   "author": "Doruk Gezici",
   "license": "MIT",
@@ -11,9 +11,9 @@
     "build": "pnpm -w build && astro build"
   },
   "dependencies": {
-    "@astrojs/node": "^9.0.0",
-    "@astrojs/vercel": "^8.0.0",
-    "astro": "^5.0.5",
+    "@astrojs/node": "^10.0.4",
+    "@astrojs/vercel": "^10.0.4",
+    "astro": "^6.1.6",
     "astro-decap-cms-oauth": "workspace:*"
   }
 }

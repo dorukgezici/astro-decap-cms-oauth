@@ -1,4 +1,4 @@
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 import decapCmsOauth from "astro-decap-cms-oauth";
 import { defineConfig } from "astro/config";
 
@@ -8,4 +8,7 @@ export default defineConfig({
   integrations: [decapCmsOauth()],
   output: "server",
   adapter: vercel({ functionPerRoute: false }),
+  server: {
+    allowedHosts: ["astro-decap-cms-oauth.vercel.app", "cardinal-sterling-gobbler.ngrok-free.app"],
+  },
 });

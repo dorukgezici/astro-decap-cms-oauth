@@ -92,8 +92,8 @@ OAUTH_GITHUB_CLIENT_SECRET=
 # GitHub App only
 OAUTH_GITHUB_REPO_ID=
 # optional
-PUBLIC_DECAP_CMS_SRC_URL=https://unpkg.com/decap-cms@^3.3.3/dist/decap-cms.js
-PUBLIC_DECAP_CMS_VERSION=3.3.3
+PUBLIC_DECAP_CMS_SRC_URL=https://unpkg.com/decap-cms@^3.11.0/dist/decap-cms.js
+PUBLIC_DECAP_CMS_VERSION=3.11.0
 ```
 
 ## Configuration Options
