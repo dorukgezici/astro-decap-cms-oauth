@@ -22,10 +22,22 @@ export const GET: APIRoute = async ({ url, redirect }) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorText = await response.text();
+      console.error("GitHub OAuth error:", response.status, errorText);
+      throw new Error(`GitHub OAuth error! status: ${response.status}`);
     }
 
     const body = await response.json();
+
+    if (body.error) {
+      console.error("GitHub OAuth error response:", body);
+      throw new Error(`GitHub OAuth error: ${body.error_description || body.error}`);
+    }
+
+    if (!body.access_token) {
+      console.error("No access_token in GitHub response:", body);
+      throw new Error("No access token received from GitHub");
+    }
 
     const content = {
       token: body.access_token,
@@ -52,7 +64,7 @@ export const GET: APIRoute = async ({ url, redirect }) => {
       headers: { "Content-Type": "text/html" },
     });
   } catch (err) {
-    console.log(err);
+    console.error(err);
     return redirect("/?error=😡");
   }
 };

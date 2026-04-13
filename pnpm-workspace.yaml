@@ -2,3 +2,4 @@ packages:
   - "demo"
 allowBuilds:
   esbuild: true
+  sharp: true
