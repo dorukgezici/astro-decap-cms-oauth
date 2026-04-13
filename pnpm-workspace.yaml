@@ -1,2 +1,4 @@
 packages:
   - "demo"
+allowBuilds:
+  esbuild: true
