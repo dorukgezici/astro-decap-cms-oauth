@@ -65,6 +65,6 @@ export const GET: APIRoute = async ({ url, redirect }) => {
     });
   } catch (err) {
     console.error(err);
-    return redirect("/?error=😡");
+    return redirect(`/?error=${encodeURIComponent("😡")}`);
   }
 };

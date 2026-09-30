@@ -17,6 +17,10 @@ This integration automatically mounts the Decap CMS (or any compatible CMS like 
 
 _This way, you aren't vendor-locked to `Netlify` and your app can be deployed anywhere that supports SSR._
 
+Run `pnpm test` to build the library and exercise the demo's HTTP routes in dev
+and Node production, including mocked OAuth exchanges and YAML regression
+fixtures. The demo's normal `pnpm -C demo build` separately builds for Vercel.
+
 ## Installation
 
 ```bash
@@ -92,14 +96,15 @@ OAUTH_GITHUB_CLIENT_SECRET=
 # GitHub App only
 OAUTH_GITHUB_REPO_ID=
 # optional
-PUBLIC_DECAP_CMS_SRC_URL=https://unpkg.com/decap-cms@^3.11.0/dist/decap-cms.js
-PUBLIC_DECAP_CMS_VERSION=3.11.0
+PUBLIC_DECAP_CMS_SRC_URL=https://unpkg.com/decap-cms@^3.16.3/dist/decap-cms.js
+PUBLIC_DECAP_CMS_VERSION=3.16.3
 ```
 
 ## Configuration Options
 
 ```js
 export interface DecapCMSOptions {
+  configPath?: string;
   decapCMSSrcUrl?: string;
   decapCMSVersion?: string;
   adminDisabled?: boolean;
@@ -110,8 +115,9 @@ export interface DecapCMSOptions {
 }
 
 const defaultOptions: DecapCMSOptions = {
+  configPath: "public/admin/config.yml",
   decapCMSSrcUrl: "",
-  decapCMSVersion: "3.3.3",
+  decapCMSVersion: "3.16.3",
   adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
@@ -132,7 +138,7 @@ export default defineConfig({
     ...,
     integrations: [
       decapCmsOauth({
-        decapCMSVersion: "3.3.3",
+        decapCMSVersion: "3.16.3",
         adminDisabled: false,
         oauthDisabled: true,
       }),
