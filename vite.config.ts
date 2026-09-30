@@ -1,27 +1,29 @@
-import path from "path";
+import path from "node:path";
+import * as ts from "@typescript/typescript6";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
+
+// Declaration tooling still needs the JavaScript compiler API alongside the TS7 CLI.
+const typescriptCompilerFolder = path.dirname(
+  path.dirname(ts.getDefaultLibFilePath({ target: ts.ScriptTarget.ESNext })),
+);
 
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(import.meta.dirname, "src/index.ts"),
-      name: "AstroDecapCMSOAuth",
+      formats: ["es", "cjs"],
     },
     ssr: true,
-    rollupOptions: {
+    rolldownOptions: {
       external: ["astro/config", "astro", "node:fs/promises", "node:path", "node:url", "js-yaml"],
-      output: {
-        globals: {
-          "astro/config": "astroConfig",
-          astro: "astro",
-          "node:fs/promises": "fsPromises",
-          "node:path": "path",
-          "node:url": "node_url",
-          "js-yaml": "yaml",
-        },
-      },
     },
   },
-  plugins: [dts({ rollupTypes: true })],
+  plugins: [
+    dts({
+      bundleTypes: {
+        invokeOptions: { typescriptCompilerFolder },
+      },
+    }),
+  ],
 });

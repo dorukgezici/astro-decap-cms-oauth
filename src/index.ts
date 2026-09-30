@@ -3,7 +3,10 @@ import { envField } from "astro/config";
 import fsPromises from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import yaml from "js-yaml";
+import { CORE_SCHEMA, dump, load, mergeTag } from "js-yaml";
+
+// Decap configs commonly share settings with YAML anchors and merge keys.
+const configSchema = CORE_SCHEMA.withTags(mergeTag);
 
 export interface DecapCMSOptions {
   configPath?: string;
@@ -18,7 +21,7 @@ export interface DecapCMSOptions {
 const defaultOptions: DecapCMSOptions = {
   configPath: "public/admin/config.yml",
   decapCMSSrcUrl: "",
-  decapCMSVersion: "3.11.0",
+  decapCMSVersion: "3.16.3",
   adminDisabled: false,
   adminRoute: "/admin",
   oauthDisabled: false,
@@ -104,7 +107,7 @@ export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegratio
           // Read and validate config
           try {
             const fileContent = await fsPromises.readFile(absoluteConfigPath, "utf8");
-            const rawConfig = yaml.load(fileContent);
+            const rawConfig = load(fileContent, { schema: configSchema });
             if (typeof rawConfig !== "object" || rawConfig === null || Array.isArray(rawConfig)) {
               console.error("Decap CMS configuration must be a YAML object.");
               adminSetupFailed = true;
@@ -125,7 +128,7 @@ export default function decapCMS(options: DecapCMSOptions = {}): AstroIntegratio
                   }
                 }
 
-                validatedConfigYaml = yaml.dump(filteredConfig);
+                validatedConfigYaml = dump(filteredConfig);
               }
             }
           } catch (e) {

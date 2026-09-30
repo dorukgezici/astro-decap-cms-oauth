@@ -6,14 +6,18 @@
   "author": "Doruk Gezici",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm -w build && astro build"
+    "build": "pnpm -w build && astro build",
+    "test": "node --test test/integration.test.mjs"
   },
   "dependencies": {
-    "@astrojs/node": "^10.0.4",
-    "@astrojs/vercel": "^10.0.4",
-    "astro": "^6.1.6",
+    "@astrojs/node": "^11.1.6",
+    "@astrojs/vercel": "^11.0.11",
+    "astro": "^7.3.5",
     "astro-decap-cms-oauth": "workspace:*"
   }
 }

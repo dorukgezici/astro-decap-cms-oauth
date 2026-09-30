@@ -1,5 +1,8 @@
 packages:
   - "demo"
+# routing-utils pins 6.1.0; stay on v6 while fixing GHSA-9wv6-86v2-598j.
+overrides:
+  "@vercel/routing-utils>path-to-regexp": "6.3.0"
 allowBuilds:
   esbuild: true
   sharp: true

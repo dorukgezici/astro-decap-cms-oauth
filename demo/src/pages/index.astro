@@ -12,24 +12,35 @@ const repoUrl = "https://github.com/dorukgezici/astro-decap-cms-oauth";
     </head>
     <body>
         <div class="flex-col-center">
-            <h1><a href={`${repoUrl}/tree/main/demo`}>astro-decap-cms-oauth-demo</a></h1>
-            <p>A demo for the Astro integration <a href={repoUrl} target="_blank">astro-decap-cms-oauth</a></p>
+            <h1>
+                <a href={`${repoUrl}/tree/main/demo`}>astro-decap-cms-oauth-demo</a>
+            </h1>
+            <p>
+                A demo for the Astro integration{" "}
+                <a href={repoUrl} target="_blank">
+                    astro-decap-cms-oauth
+                </a>
+            </p>
 
-            <p class="flex-center">
+            <div class="flex-center">
                 <a href="https://npmjs.com/package/astro-decap-cms-oauth">
                     <img src="https://img.shields.io/npm/v/astro-decap-cms-oauth" alt="astro-decap-cms-oauth" />
                 </a>
                 <a href="https://npmjs.com/package/astro-decap-cms-oauth">
                     <img src="https://img.shields.io/npm/dt/astro-decap-cms-oauth" alt="npm download count" />
                 </a>
-                <hr style="width: 50%" />
-            </p>
+            </div>
+            <hr style="width: 50%" />
 
-            <p>Decap CMS dashboard is at <a href="/admin">/admin</a>.</p>
-            <p>Decap CMS configuration is at <a href="/admin/config.yml">/admin/config.yml</a>.</p>
             <p>
-                OAuth backend routes are at <a href="/oauth">/oauth</a> and <a href="/oauth/callback">/oauth/callback</a
-                >.
+                Decap CMS dashboard is at <a href="/admin">/admin</a>.
+            </p>
+            <p>
+                Decap CMS configuration is at <a href="/admin/config.yml">/admin/config.yml</a>.
+            </p>
+            <p>
+                OAuth backend routes are at <a href="/oauth">/oauth</a> and{" "}
+                <a href="/oauth/callback">/oauth/callback</a>.
             </p>
         </div>
     </body>

@@ -16,3 +16,26 @@
 ### For the library docs, see [../README.md](../README.md)
 
 This astro app serves as a demo implementing the integration [`astro-decap-cms-oauth`](https://npmjs.com/package/astro-decap-cms-oauth).
+
+## Development and verification
+
+Use Node.js 24 and pnpm 12.8.1. From the repository root:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm build
+pnpm demo
+```
+
+For normal development and Vercel builds, set `OAUTH_GITHUB_CLIENT_ID` and
+`OAUTH_GITHUB_CLIENT_SECRET` in `demo/.env` (and in Vercel for deployment).
+The production build command is `pnpm -C demo build`.
+
+Run `pnpm test` to build the integration and verify the demo against Astro 7
+using real local HTTP in development and Node standalone production. Tests
+use dummy credentials and mock GitHub's token exchange; no real OAuth app or
+external requests are needed. See [test/README.md](test/README.md) for coverage.
+
+The production test adapter does not change the demo's Vercel configuration.
+A successful Vercel build validates packaging, but real GitHub login and the
+Vercel runtime still need a deployed preview with real credentials.

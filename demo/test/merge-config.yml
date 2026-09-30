@@ -1,0 +1,49 @@
+backend_defaults: &backend_defaults
+  name: github
+  repo: test/merge-regression
+  branch: inherited
+  auth_endpoint: auth/login
+
+backend:
+  <<: *backend_defaults
+  branch: fixture
+  base_url: http://localhost:4321
+
+field_defaults: &field_defaults
+  widget: string
+  required: false
+  hint: on
+
+collection_defaults: &collection_defaults
+  create: true
+  folder: src/content/fixture
+
+media_folder: public/uploads
+public_folder: /uploads
+publish_mode: editorial_workflow
+
+collections:
+  - <<: *collection_defaults
+    name: fixture
+    label: Merge regression
+    fields:
+      - <<: *field_defaults
+        name: published
+        label: Published
+        widget: datetime
+        default: 2026-09-30
+      - <<: *field_defaults
+        name: timestamp
+        label: Timestamp
+        default: 2026-09-30T12:34:56Z
+      - <<: *field_defaults
+        name: switch
+        label: Switch
+        default: yes
+      - name: enabled
+        label: Enabled
+        widget: boolean
+        default: true
+
+# Helper anchors and non-Decap keys must not leak into the served configuration.
+not_a_decap_option: discarded
