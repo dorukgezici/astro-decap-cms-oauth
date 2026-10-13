@@ -171,7 +171,7 @@ importers:
     dependencies:
       js-yaml:
         specifier: ^5.4.2
-        version: 5.4.2
+        version: 5.4.3
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.59.3
@@ -184,28 +184,28 @@ importers:
         version: 6.0.2
       astro:
         specifier: ^7.3.5
-        version: 7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9)
+        version: 7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1)
       typescript:
         specifier: ^7.0.2
         version: 7.0.2
       vite:
         specifier: ^8.3.1
-        version: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+        version: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)
       vite-plugin-dts:
         specifier: ^5.1.1
-        version: 5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+        version: 5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1))
 
   demo:
     dependencies:
       '@astrojs/node':
         specifier: ^11.1.6
-        version: 11.1.6(astro@7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9))(supports-color@8.1.1)
+        version: 11.1.7(astro@7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1))(supports-color@8.1.1)
       '@astrojs/vercel':
         specifier: ^11.0.11
-        version: 11.0.11(astro@7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9))(supports-color@8.1.1)
+        version: 11.0.13(astro@7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1))(supports-color@8.1.1)
       astro:
         specifier: ^7.3.5
-        version: 7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9)
+        version: 7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1)
       astro-decap-cms-oauth:
         specifier: workspace:*
         version: link:..
@@ -283,14 +283,14 @@ packages:
     resolution: {integrity: sha512-1k1acnX7DepIiea9U9/Y+d1hdAFfylu1ZQQkkYgRSwBOBAsXInolyZuh/2tax+83vu/A+hOYP6P3+265RvMTvw==}
     engines: {node: '>=22.12.0'}
 
-  '@astrojs/internal-helpers@0.11.0':
-    resolution: {integrity: sha512-3rzxJ+xbo0+8YyqOzLziIN32wmsHdCjEVz2sGOpRxJ+Ben/KiLph4ItxBy1abEL+E8fkRzqjg0rfXmaHJGw9JA==}
+  '@astrojs/internal-helpers@0.12.0':
+    resolution: {integrity: sha512-pKPuwCDtO0L7zgmt1JGd9X4Aes1+0SX3IEBSqBNPHsScYdPMlfmed3Y7DTbXyF7E+8ylnb563o/0OzGQPOFehw==}
 
-  '@astrojs/markdown-satteri@0.4.2':
-    resolution: {integrity: sha512-g4QehXnB/MzxQWnSf17NciFInMqEJy9948p8cc7zGg/r7995m0Ln5PMr3Xlnj24iey1LchaoZ3SzTOa3D4P/3w==}
+  '@astrojs/markdown-satteri@0.4.3':
+    resolution: {integrity: sha512-PFbEHPnwUlLvpXd7RXrrKM+j12akF4bG+DSuNuoN+3eiwjOwp4HaPi+QQdbkBV7QEYXmzyKca50OJsmGxhNIUA==}
 
-  '@astrojs/node@11.1.6':
-    resolution: {integrity: sha512-jNZ10/vAT+HuXkX0E/tITsIYCSn3BmAvsooVAN1OjagG+FEzelpUWToy1bA3x6Irmu0VaknWRfReY+1twd35sQ==}
+  '@astrojs/node@11.1.7':
+    resolution: {integrity: sha512-IXmBthgAMuYSTcOeIM20CpHrUkYxYhI3uJW0b9jOiaZtCXquFinstQ0WWZnYaA1kzCfgSkjmISKkEH6fwDPmbg==}
     peerDependencies:
       astro: ^7.2.1
 
@@ -302,8 +302,8 @@ packages:
     resolution: {integrity: sha512-C1TLn5sPJr0x4vk56piHWKbnqlEB8BKyte5Y45V02U+D7BGO5eMqZDH5aPjnkXQWJggvmsTXxH03QMZ9NgWLzQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
 
-  '@astrojs/vercel@11.0.11':
-    resolution: {integrity: sha512-OAh1CzR9eKlDBBpmp1VY95tFnAWDO46Ue7qxHjx0/2hdjHILvcZa6pnjjLOAOihuuR3CYpsZSPOscfJRKf8dOQ==}
+  '@astrojs/vercel@11.0.13':
+    resolution: {integrity: sha512-g7JlowxnwkbrLpcXjOq7YAZSEIeyoW8+2xNeXX+iI/L0yOPBgW6Aei1KXPNHdnDOrG7u+mbCt4oeV+IUqtL4FQ==}
     peerDependencies:
       astro: ^7.0.0
 
@@ -1212,8 +1212,8 @@ packages:
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
 
-  am-i-vibing@0.4.0:
-    resolution: {integrity: sha512-MxT4XZL7pzLHpuvhDKdMaQHMGGkJDLluKBLsbstn+8wv9sWcFT6h+0ve9qkml95amVTZtZV83gQe2hY+ojgHLg==}
+  am-i-vibing@0.5.0:
+    resolution: {integrity: sha512-KLcsDhqf1XRrJmJr+9I/C0EX2K+sGrAGZFgkmd84c8TJO9zJBu+/kFInjazu1KfJWFhWDKdRWkpBzEs7s35DVA==}
     hasBin: true
 
   anymatch@3.1.3:
@@ -1230,8 +1230,8 @@ packages:
     resolution: {integrity: sha512-COROpnaoap1E2F000S62r6A60uHZnmlvomhfyT2DlTcrY1OrBKn2UhH7qn5wTC9zMvD0AY7csdPSNwKP+7WiQw==}
     engines: {node: '>= 0.4'}
 
-  astro@7.3.5:
-    resolution: {integrity: sha512-1p/ernaq/RuESbM5NMjWzbO6SiebMGrGcYlGjMfBhzzgM+n/X7AUmVyw8BqW2QYCdivpsHwJBcD1fqmlTZjZHg==}
+  astro@7.3.8:
+    resolution: {integrity: sha512-LHzDHSaV+YzZiR3EFndDYTLLeNeuMtP1qX1FLcCNUUHOCqTTIWPczy2UV3zpA5VqvJe5cWZolqM9Z8JFqR2i9w==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     peerDependencies:
@@ -1419,8 +1419,8 @@ packages:
     resolution: {integrity: sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==}
     engines: {node: '>= 0.4'}
 
-  es-module-lexer@2.3.2:
-    resolution: {integrity: sha512-poHGpORABojJJucnV9KbOavETW8lBVnphkW77ER5/BQ5Fz7oXSoCNek7IH3vR5nRjdsEz926ibFYX8KtLQmdyw==}
+  es-module-lexer@3.0.3:
+    resolution: {integrity: sha512-yWGe1O/j+almnV4hOYrmZo8u58JdnmXEMneRQAYkWtqSiT86yoMIEKF4rpqEDj52tbYl3xceBD3DQIBwcsC9Pw==}
 
   esbuild@0.28.2:
     resolution: {integrity: sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==}
@@ -1515,8 +1515,8 @@ packages:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
 
-  get-tsconfig@5.0.0-beta.4:
-    resolution: {integrity: sha512-7nF7C9fIPFEMHgEMEfgIlO9wDdZ8CyHw27rWciFZfHvHDReIiPhsYuzPRXsfvBCqFy1l8RRyyWV7QLM+ZhUJsQ==}
+  get-tsconfig@5.0.0-beta.6:
+    resolution: {integrity: sha512-X6fBC0pmImC70gvX2zm56go9hx0MyoGVdG0tUCkg/D+Xnh5TJsOZ7iDbOdI3PvmtrDxnu1YdDufpK2QJX1Meqw==}
     engines: {node: '>=20.20.0'}
 
   github-slugger@2.0.0:
@@ -1606,12 +1606,8 @@ packages:
   jose@5.10.0:
     resolution: {integrity: sha512-s+3Al/p9g32Iq+oqXxkW//7jk2Vig6FF1CFqzVXoTUXt2qz89YWbL+OwS17NFYEvxC35n0FKeGO2LGYSxeM2Gg==}
 
-  js-yaml@4.3.2:
-    resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
-    hasBin: true
-
-  js-yaml@5.4.2:
-    resolution: {integrity: sha512-m+aqu+LwO1O6sIopafj8HUVl5aawITwZQe/yHpMCKjaWBaA/d07B/QdMb3529REftiU+RMMHL3Vlsw3hON7vWg==}
+  js-yaml@5.4.3:
+    resolution: {integrity: sha512-yzzNtgczwgoVHNigCyKTXcQJU4Y8t/ikU4UxXW0BvrLfHTGWZhsNcOT2s/a7vn81/4KqVnNmHjaUEPlvWnNwVw==}
     hasBin: true
 
   json-schema-traverse@0.4.1:
@@ -2271,8 +2267,8 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  verkit@0.4.1:
-    resolution: {integrity: sha512-mMVzj0TXExtVdlDEq+Mzp0eyOuyznNpFobNM3uAqe3HVm/Ps2c+u17BligMkZjZCA6EiXpoon8iRTer3iu40SQ==}
+  verkit@0.5.0:
+    resolution: {integrity: sha512-u4J1hr6Y+C/hit34GwL3eIcUf3wngT8TlYUjK7tk0jxydKLAq3sYvifjdTDA6U3KCKRcQCQDGf/srjxfZF3l7g==}
     engines: {node: '>=18.12.0'}
 
   vfile-message@4.0.3:
@@ -2378,6 +2374,11 @@ packages:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
     engines: {node: '>=18'}
 
+  yaml@2.9.1:
+    resolution: {integrity: sha512-3NxN8+78OdzbT7C/WjGsyfPAtJaN3FNDsWxv7Y7mcDsT/oOmgW8BpyQQFFBnvZE3j9Y2Sdz1ULFLezL7Eb2yFw==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
   yargs-parser@22.0.0:
     resolution: {integrity: sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
@@ -2448,28 +2449,28 @@ snapshots:
     dependencies:
       '@astrojs/compiler-binding': 0.5.1
 
-  '@astrojs/internal-helpers@0.11.0':
+  '@astrojs/internal-helpers@0.12.0':
     dependencies:
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
-      js-yaml: 4.3.2
       picomatch: 4.0.7
       retext-smartypants: 6.2.0
       shiki: 4.4.3
       smol-toml: 1.9.0
       unified: 11.0.5
+      yaml: 2.9.1
 
-  '@astrojs/markdown-satteri@0.4.2':
+  '@astrojs/markdown-satteri@0.4.3':
     dependencies:
-      '@astrojs/internal-helpers': 0.11.0
+      '@astrojs/internal-helpers': 0.12.0
       '@astrojs/prism': 4.0.2
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/node@11.1.6(astro@7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9))(supports-color@8.1.1)':
+  '@astrojs/node@11.1.7(astro@7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1))(supports-color@8.1.1)':
     dependencies:
-      '@astrojs/internal-helpers': 0.11.0
-      astro: 7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9)
+      '@astrojs/internal-helpers': 0.12.0
+      astro: 7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1)
       send: 1.2.1(supports-color@8.1.1)
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -2486,15 +2487,15 @@ snapshots:
       is-docker: 4.0.0
       package-manager-detector: 1.8.0
 
-  '@astrojs/vercel@11.0.11(astro@7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9))(supports-color@8.1.1)':
+  '@astrojs/vercel@11.0.13(astro@7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1))(supports-color@8.1.1)':
     dependencies:
-      '@astrojs/internal-helpers': 0.11.0
+      '@astrojs/internal-helpers': 0.12.0
       '@vercel/analytics': 2.0.1
       '@vercel/functions': 3.9.9
       '@vercel/nft': 1.11.0(supports-color@8.1.1)
       '@vercel/routing-utils': 6.6.0
-      astro: 7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9)
-      esbuild: 0.28.2
+      astro: 7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1)
+      rolldown: 1.2.11
       tinyglobby: 0.2.17
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-web-identity'
@@ -3207,7 +3208,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  am-i-vibing@0.4.0:
+  am-i-vibing@0.5.0:
     dependencies:
       process-ancestry: 0.1.0
 
@@ -3224,16 +3225,16 @@ snapshots:
 
   aria-query@5.3.2: {}
 
-  astro@7.3.5(@types/node@26.6.3)(@vercel/functions@3.9.9):
+  astro@7.3.8(@types/node@26.6.3)(@vercel/functions@3.9.9)(esbuild@0.28.2)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.1
-      '@astrojs/internal-helpers': 0.11.0
-      '@astrojs/markdown-satteri': 0.4.2
+      '@astrojs/internal-helpers': 0.12.0
+      '@astrojs/markdown-satteri': 0.4.3
       '@astrojs/telemetry': 3.3.3
       '@capsizecss/unpack': 4.0.1
       '@clack/prompts': 1.8.1
       '@oslojs/encoding': 1.1.0
-      am-i-vibing: 0.4.0
+      am-i-vibing: 0.5.0
       aria-query: 5.3.2
       axobject-query: 4.1.0
       ci-info: 4.4.0
@@ -3243,16 +3244,14 @@ snapshots:
       devalue: 5.9.4
       diff: 9.0.0
       dset: 3.1.4
-      es-module-lexer: 2.3.2
-      esbuild: 0.28.2
+      es-module-lexer: 3.0.3
       find-proc: 0.2.0
       flattie: 1.1.1
       fontace: 0.4.1
-      get-tsconfig: 5.0.0-beta.4
+      get-tsconfig: 5.0.0-beta.6
       github-slugger: 2.0.0
       html-escaper: 3.0.3
       http-cache-semantics: 4.2.0
-      js-yaml: 4.3.2
       jsonc-parser: 3.3.1
       magic-string: 1.4.2
       magicast: 0.5.5
@@ -3264,6 +3263,7 @@ snapshots:
       package-manager-detector: 1.8.0
       piccolore: 0.1.3
       picomatch: 4.0.7
+      rolldown: 1.2.11
       shiki: 4.4.3
       smol-toml: 1.9.0
       svgo: 4.1.0
@@ -3273,9 +3273,9 @@ snapshots:
       ultrahtml: 1.7.0
       unifont: 0.7.5
       unstorage: 1.17.5(@vercel/functions@3.9.9)
-      verkit: 0.4.1
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
-      vitefu: 1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+      verkit: 0.5.0
+      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.6.5
@@ -3300,6 +3300,7 @@ snapshots:
       - '@vitejs/devtools'
       - aws4fetch
       - db0
+      - esbuild
       - idb-keyval
       - ioredis
       - jiti
@@ -3453,7 +3454,7 @@ snapshots:
 
   es-errors@1.3.0: {}
 
-  es-module-lexer@2.3.2: {}
+  es-module-lexer@3.0.3: {}
 
   esbuild@0.28.2:
     optionalDependencies:
@@ -3483,6 +3484,7 @@ snapshots:
       '@esbuild/win32-arm64': 0.28.2
       '@esbuild/win32-ia32': 0.28.2
       '@esbuild/win32-x64': 0.28.2
+    optional: true
 
   escape-html@1.0.3: {}
 
@@ -3558,7 +3560,7 @@ snapshots:
 
   get-stream@6.0.1: {}
 
-  get-tsconfig@5.0.0-beta.4:
+  get-tsconfig@5.0.0-beta.6:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
@@ -3655,11 +3657,7 @@ snapshots:
 
   jose@5.10.0: {}
 
-  js-yaml@4.3.2:
-    dependencies:
-      argparse: 2.0.1
-
-  js-yaml@5.4.2:
+  js-yaml@5.4.3:
     dependencies:
       argparse: 2.0.1
 
@@ -4241,7 +4239,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unplugin-dts@1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  unplugin-dts@1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)):
     dependencies:
       '@rollup/pluginutils': 5.4.0
       '@volar/typescript': 2.4.28(typescript@7.0.2)
@@ -4257,7 +4255,7 @@ snapshots:
       '@microsoft/api-extractor': 7.59.3(@types/node@26.6.3)
       esbuild: 0.28.2
       rolldown: 1.2.11
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -4286,7 +4284,7 @@ snapshots:
       punycode: 2.3.1
     optional: true
 
-  verkit@0.4.1: {}
+  verkit@0.5.0: {}
 
   vfile-message@4.0.3:
     dependencies:
@@ -4298,12 +4296,12 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plugin-dts@5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  vite-plugin-dts@5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)):
     dependencies:
-      unplugin-dts: 1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+      unplugin-dts: 1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1))
     optionalDependencies:
       '@microsoft/api-extractor': 7.59.3(@types/node@26.6.3)
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@rspack/core'
       - '@vue/language-core'
@@ -4313,7 +4311,7 @@ snapshots:
       - typescript
       - webpack
 
-  vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2):
+  vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -4324,10 +4322,11 @@ snapshots:
       '@types/node': 26.6.3
       esbuild: 0.28.2
       fsevents: 2.3.3
+      yaml: 2.9.1
 
-  vitefu@1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  vitefu@1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)):
     optionalDependencies:
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)(yaml@2.9.1)
 
   vscode-uri@3.2.0: {}
 
@@ -4356,6 +4355,8 @@ snapshots:
   xxhash-wasm@1.1.0: {}
 
   yallist@5.0.0: {}
+
+  yaml@2.9.1: {}
 
   yargs-parser@22.0.0: {}
 
