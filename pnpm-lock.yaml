@@ -190,10 +190,10 @@ importers:
         version: 7.0.2
       vite:
         specifier: ^8.3.1
-        version: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+        version: 8.3.3(@types/node@26.6.3)(esbuild@0.28.2)
       vite-plugin-dts:
         specifier: ^5.1.1
-        version: 5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+        version: 5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2))
 
   demo:
     dependencies:
@@ -2295,8 +2295,8 @@ packages:
       vite:
         optional: true
 
-  vite@8.3.1:
-    resolution: {integrity: sha512-/bvH9E9tmCXRGp2uXY3WbOldqpTwFkbha/8ANaEQ6VkxhH60KyqLwgZq6lG2y+4uT55x9+9eUHMpQ7uGnOCKjA==}
+  vite@8.3.3:
+    resolution: {integrity: sha512-cTAldKPImjg6c+gk48U19POPn3GCBzZwpdsN8ZMEEcbpes+6/wvfqUd0C2y3qYY4wsj8PwgFwrZ/1jBPVttMSg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -3274,8 +3274,8 @@ snapshots:
       unifont: 0.7.5
       unstorage: 1.17.5(@vercel/functions@3.9.9)
       verkit: 0.4.1
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
-      vitefu: 1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+      vite: 8.3.3(@types/node@26.6.3)(esbuild@0.28.2)
+      vitefu: 1.1.3(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2))
       xxhash-wasm: 1.1.0
       yargs-parser: 22.0.0
       zod: 4.6.5
@@ -4241,7 +4241,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unplugin-dts@1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  unplugin-dts@1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2)):
     dependencies:
       '@rollup/pluginutils': 5.4.0
       '@volar/typescript': 2.4.28(typescript@7.0.2)
@@ -4257,7 +4257,7 @@ snapshots:
       '@microsoft/api-extractor': 7.59.3(@types/node@26.6.3)
       esbuild: 0.28.2
       rolldown: 1.2.11
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.3(@types/node@26.6.3)(esbuild@0.28.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -4298,12 +4298,12 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plugin-dts@5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  vite-plugin-dts@5.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2)):
     dependencies:
-      unplugin-dts: 1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2))
+      unplugin-dts: 1.1.1(@microsoft/api-extractor@7.59.3(@types/node@26.6.3))(esbuild@0.28.2)(rolldown@1.2.11)(supports-color@8.1.1)(typescript@7.0.2)(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2))
     optionalDependencies:
       '@microsoft/api-extractor': 7.59.3(@types/node@26.6.3)
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.3(@types/node@26.6.3)(esbuild@0.28.2)
     transitivePeerDependencies:
       - '@rspack/core'
       - '@vue/language-core'
@@ -4313,7 +4313,7 @@ snapshots:
       - typescript
       - webpack
 
-  vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2):
+  vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -4325,9 +4325,9 @@ snapshots:
       esbuild: 0.28.2
       fsevents: 2.3.3
 
-  vitefu@1.1.3(vite@8.3.1(@types/node@26.6.3)(esbuild@0.28.2)):
+  vitefu@1.1.3(vite@8.3.3(@types/node@26.6.3)(esbuild@0.28.2)):
     optionalDependencies:
-      vite: 8.3.1(@types/node@26.6.3)(esbuild@0.28.2)
+      vite: 8.3.3(@types/node@26.6.3)(esbuild@0.28.2)
 
   vscode-uri@3.2.0: {}
 
